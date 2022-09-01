@@ -1,0 +1,92 @@
+@use "../SASS/GlobalRules" as *;
+@use "../SASS/Variables" as *;
+@use "../SASS/Mixins" as *;
+
+footer {
+  background-color: $Very-Dark-Blue;
+  padding: 30px 0;
+  .column {
+    &:first-child {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .logo {
+        width: 60%;
+      }
+    }
+    &:nth-child(2) {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  .platforms {
+    display: flex;
+    .platform {
+      margin-right: 15px;
+    }
+  }
+  .links {
+    .link-item {
+      margin-bottom: 7px;
+      font-size: 15px;
+      a {
+        color: $Vary-Light-Gray;
+      }
+    }
+  }
+  form {
+    display: flex;
+    justify-content: space-between;
+    .update {
+      padding: 6px 10px;
+      border-radius: 99px;
+      border: none;
+      outline: none;
+      &::placeholder {
+        font-size: 13px;
+      }
+      flex-basis: 75%;
+    }
+    .main {
+      @include mainButton(15px);
+      flex-basis: 20%;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .row {
+      gap: 20px;
+    }
+    .column {
+      text-align: center;
+      &:first-child {
+        order: 4;
+        gap: 20px;
+        .logo {
+          margin: auto;
+        }
+        .social-icons {
+          order: -1;
+        }
+        .platforms {
+          justify-content: space-between;
+          .platform {
+            img {
+              width: 40px;
+            }
+          }
+        }
+      }
+      &:nth-child(2) {
+        order: 3;
+        margin-top: 25px;
+      }
+      &:last-child {
+        order: 1;
+      }
+    }
+  }
+}

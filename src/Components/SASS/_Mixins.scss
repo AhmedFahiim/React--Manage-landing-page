@@ -1,0 +1,12 @@
+@use "./Variables" as *;
+
+@mixin mainButton($fontSize) {
+  background-color: $Bright-Red;
+  padding: 5px 10px;
+  font-size: $fontSize;
+  transition: $transition;
+  border: none;
+  outline: none;
+  border-radius: 99px;
+  color: #fff;
+}

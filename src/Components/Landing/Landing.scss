@@ -1,0 +1,74 @@
+@use "../SASS/GlobalRules" as *;
+@use "../SASS/Variables" as *;
+@use "../SASS/Mixins" as *;
+
+.landing {
+  overflow: hidden;
+  position: relative;
+  padding: {
+    top: 25px;
+    bottom: 100px;
+  }
+
+  .mainContent {
+    height: calc(100vh - 55px);
+    align-items: center;
+    margin-top: 0;
+    .mainBox {
+      padding: 0 60px;
+      .headWord {
+        font-size: 50px;
+        font-weight: bold;
+        color: $Very-Dark-Blue;
+      }
+      .disc {
+        font-size: 14px;
+        color: $Dark-Grayish-Blue;
+        width: 60%;
+        margin: 15px 0;
+        line-height: 1.5;
+      }
+      .main {
+        @include mainButton(15px);
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .imgBox {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .mainContent {
+      align-items: flex-start;
+      margin-top: 50px;
+      .mainBox {
+        padding: 0 15px;
+        text-align: center;
+        order: 2;
+        .headWord {
+          font-size: 45px;
+        }
+        .disc {
+          width: 100%;
+        }
+      }
+    }
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .mainContent {
+      .mainBox {
+        padding: 0;
+      }
+    }
+  }
+  .pattern {
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    z-index: -1;
+  }
+}

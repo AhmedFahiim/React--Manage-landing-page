@@ -1,0 +1,75 @@
+@use "../SASS/GlobalRules" as *;
+@use "../SASS/Variables" as *;
+
+.diffrent {
+  position: relative;
+  padding-bottom: 50px;
+
+  .row {
+    justify-content: space-between;
+    .whatIs,
+    .answerHead {
+      color: $Very-Dark-Blue;
+    }
+    .disc,
+    .answerDisc {
+      width: 75%;
+      color: $Dark-Grayish-Blue;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .answerHead {
+      font-size: 18px;
+    }
+    .answer {
+      position: relative;
+      margin-bottom: 50px;
+      .number {
+        position: absolute;
+        top: 0;
+        left: -40px;
+        width: 35px;
+        background-color: $Bright-Red;
+        color: #fff;
+        border-radius: 99px;
+        text-align: center;
+      }
+    }
+    @media (max-width: 991px) {
+      .question,
+      .answer {
+        text-align: center;
+      }
+      .answerDisc,
+      .disc {
+        width: 100%;
+      }
+      .question {
+        margin-bottom: 50px;
+      }
+      .answer {
+        .number {
+          left: 0;
+        }
+      }
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .question {
+        .disc {
+          width: 100%;
+        }
+      }
+      .answer {
+        .answerDisc {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .pattern {
+    position: absolute;
+    top: 180px;
+    left: -450px;
+    z-index: -1;
+  }
+}

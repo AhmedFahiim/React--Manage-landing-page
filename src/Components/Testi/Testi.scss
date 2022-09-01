@@ -1,0 +1,92 @@
+@use "../SASS/GlobalRules" as *;
+@use "../SASS/Variables" as *;
+@use "../SASS/Mixins" as *;
+
+.testimonials {
+  padding-bottom: 50px;
+  .heading {
+    color: $Very-Dark-Blue;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .slide-holder {
+    overflow: hidden;
+    padding: 40px 0;
+    .slider {
+      position: relative;
+      left: -10%;
+      display: flex;
+      .slide-item {
+        position: relative;
+        min-width: 39%;
+        margin-right: 25px;
+        background-color: $Vary-Light-Gray;
+        text-align: center;
+        padding: 50px 40px 0;
+        border-radius: 8px;
+      }
+      .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        img {
+          max-width: 100%;
+        }
+      }
+      .name {
+        color: $Very-Dark-Blue;
+        font-weight: 700;
+      }
+      .feedBack {
+        color: $Dark-Grayish-Blue;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+    }
+    .bullets {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      margin: 40px auto;
+      .bullet {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid $Bright-Red;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: $transition;
+        &:hover,
+        &.active {
+          background-color: $Bright-Red;
+          border-color: $Bright-Red;
+        }
+      }
+    }
+    @media (max-width: 991px) {
+      .slider {
+        flex-direction: column;
+        left: 0;
+        .slide-item {
+          min-width: 100%;
+          margin: 0 0 40px;
+        }
+      }
+      .bullets {
+        display: none;
+      }
+    }
+  }
+  .main {
+    @include mainButton(15px);
+    display: block;
+    margin: 30px auto;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
