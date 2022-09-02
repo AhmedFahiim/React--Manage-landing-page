@@ -33,7 +33,7 @@ function Testi() {
     },
   ]);
 
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState(0);
 
   const maping = testimonials.map((e) => {
     return (
